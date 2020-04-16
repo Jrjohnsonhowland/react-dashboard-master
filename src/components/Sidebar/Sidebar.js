@@ -30,7 +30,7 @@ const Sidebar = () => (
       />
       <LinksGroup
         header="Calendar"
-        headerLink="/app/buttons"
+        headerLink="/app/components/buttons"
         glyph="tables"
       />
       <LinksGroup

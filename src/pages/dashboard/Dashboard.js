@@ -3,6 +3,8 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 import {
   Row,
@@ -24,9 +26,27 @@ import {
 import { mock } from './mock'
 
 import Widget from '../../components/Widget';
-
 import { fetchPosts } from '../../actions/posts';
 import s from './Dashboard.module.scss';
+
+class Cal extends Component {
+  state = {
+    date: new Date(),
+  }
+
+  onChange = date => this.setState({ date })
+
+  render() {
+    return (
+      <div>
+        <Calendar
+          onChange={this.onChange}
+          value={this.state.date}
+        />
+      </div>
+    );
+  }
+}
 
 class Dashboard extends Component {
   /* eslint-disable */
@@ -146,14 +166,10 @@ class Dashboard extends Component {
             </Widget>
           </Col>        {/* User Database goes here */}
           <Col sm={12} md={6}>
-            <Widget title="Calendar">
-              <Alert
-                  className="alert-sm"
-                  color="warning"
-              >
-                <span className="fw-semi-bold">Notice:</span> This is where the calendar would load.
-              </Alert>
+            <Widget >
 
+            <Cal></Cal>
+            
             </Widget>  {/* CALENDAR GOES HERE MUST TALK WITH KELLER WILLIAMS TO SET UP */}
           </Col>
         </Row>
