@@ -6,6 +6,9 @@ import Icon from '../Icon';
 import LinksGroup from './LinksGroup/LinksGroup';
 
 import s from './Sidebar.module.scss';
+import Charts from '../../pages/charts/Charts';
+import Layout from '../Layout/Layout';
+
 
 const Sidebar = () => (
   <nav className={s.root}>
@@ -22,12 +25,12 @@ const Sidebar = () => (
       />
       <LinksGroup
         header="Clients"
-        headerLink="/app/notFound"
+        headerLink="/app/clients"
         glyph="typography"
       />
       <LinksGroup
         header="Calendar"
-        headerLink="/app/notFound"
+        headerLink="/app/buttons"
         glyph="tables"
       />
       <LinksGroup
@@ -41,7 +44,7 @@ const Sidebar = () => (
         childrenLinks={[
           {
             name: 'Reports',
-            link: '/app/notFound',
+            link: '/app/components/charts' ,
           },
           {
             name: 'Documents',
