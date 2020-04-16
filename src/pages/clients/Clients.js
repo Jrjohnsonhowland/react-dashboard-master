@@ -1,6 +1,10 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 
+import cx from 'classnames';
+
+import styles from './Clients.module.scss';
+
 // import mock from './mock';
 
 const mock = {
@@ -136,7 +140,9 @@ const Clients = () => {
               <td>{client.street_address}</td>
               <td>{client.family_members.map((member, index) => (
                 <span key={index}>
-                  <span>{member.name} : {member.birthday}</span>
+                  <span>
+                    <span>{member.name}:</span> <span>{member.birthday}</span>
+                  </span>
                   <br />
                 </span>
               ))}</td>
