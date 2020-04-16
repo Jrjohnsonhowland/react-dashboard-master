@@ -41,7 +41,7 @@ const Sidebar = () => (
         childrenLinks={[
           {
             name: 'Reports',
-            link: '/app/notFound',
+            link: '/app/charts',
           },
           {
             name: 'Documents',
