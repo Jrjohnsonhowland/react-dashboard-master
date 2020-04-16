@@ -44,7 +44,7 @@ const Sidebar = () => (
         childrenLinks={[
           {
             name: 'Reports',
-            link: '/app/components/charts' ,
+            link: '/app/components/charts',
           },
           {
             name: 'Documents',
