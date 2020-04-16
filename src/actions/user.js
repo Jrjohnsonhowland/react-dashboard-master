@@ -72,7 +72,7 @@ export function loginUser(creds) {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestLogin(creds));
     if(process.env.NODE_ENV === "development") {
-    return fetch('/login', config)
+    return fetch('http://localhost:5000/login', config)
       .then(response => response.json().then(user => ({ user, response })))
       .then(({ user, response }) => {
         if (!response.ok) {

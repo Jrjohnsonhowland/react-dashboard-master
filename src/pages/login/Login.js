@@ -17,8 +17,6 @@ import Footer from "../../components/Footer";
 import { loginUser } from '../../actions/user';
 import jwt from 'jsonwebtoken';
 import config from '../../config'
-import Helmet from 'react-helmet';
-
 
 
 class Login extends React.Component {
@@ -94,7 +92,7 @@ class Login extends React.Component {
                 <p className="fs-sm text-muted">
                   User your username and password to sign in
                 </p>
-                <Form className="mt" onSubmit={this.doLogin}>
+                <Form className="mt" onSubmit={() => console.log('OOF')}>
                   {this.props.errorMessage && (
                     <Alert size="sm" color="danger">
                       {this.props.errorMessage}
@@ -128,8 +126,8 @@ class Login extends React.Component {
                       <Button color="default" size="sm">
                         Create an account
                       </Button>
-                      <Button color="danger" size="sm" type="submit">
-                        {this.props.isFetching ? 'Loading...' : 'Login'}
+                      <Button color="danger" size="sm" href="/app/main">
+                        Login
                       </Button>
                     </div>
                   </div>
